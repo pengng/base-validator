@@ -1,0 +1,25 @@
+{
+    "name": "base-validator",
+    "version": "0.0.1",
+    "description": "基础的表单验证器",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pengng/base-validator.git"
+    },
+    "keywords": [
+        "表单",
+        "验证器",
+        "校验",
+        "valid",
+        "validator",
+        "form"
+    ],
+    "author": "yupeng.kuo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/pengng/base-validator/issues"
+    },
+    "homepage": "https://github.com/pengng/base-validator#readme"
+}
