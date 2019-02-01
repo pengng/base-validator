@@ -88,6 +88,6 @@ console(msg)
 | equalTo       | 值相等                                                       |
 | contains      | 包含给定值                                                   |
 | in            | 在给定值内存在                                               |
-| regular       | 正则校验                                                     |
-| required      | 必填                                                         |
+| regular       | 正则校验。期望值是 **RegExp** 类型或 **string** 类型（正则字面量格式） |
+| required      | 必填。**0** 和 **false** 属于有效值，仅包含一个或多个空白字符的字符串属于无效值 |
 
