@@ -1,9 +1,11 @@
 {
     "name": "base-validator",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "基础的表单验证器",
     "main": "index.js",
-    "scripts": {},
+    "scripts": {
+        "test": "mocha"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/pengng/base-validator.git"
@@ -21,5 +23,8 @@
     "bugs": {
         "url": "https://github.com/pengng/base-validator/issues"
     },
-    "homepage": "https://github.com/pengng/base-validator#readme"
+    "homepage": "https://github.com/pengng/base-validator#readme",
+    "devDependencies": {
+        "mocha": "^5.2.0"
+    }
 }
