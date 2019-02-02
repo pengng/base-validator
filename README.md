@@ -38,7 +38,7 @@ console(msg) // 手机号码不能为空
 - `rule` \<Array[object]\> 校验的规则，对象数组。
   - `property` \<string\> 校验的字段名。**Alias：prop、key**
   - `message` \<string\> 校验不通过时的提示语。**Alias：msg**
-  - `assert` \<string\> 校验的策略，支持的列表参考 [**Assert**](#Assert) 表。
+  - `assert` \<string\> 校验的策略，支持的列表参考 [**Assert**](#assert) 表。
   - `expected` \<any\> 期望值。**部分校验策略需要带期望值**。
 
 
