@@ -82,3 +82,47 @@ console(msg) // 手机号码不能为空
 - 允许数据前后包含空白字符，用户可能不会注意到输入了空白字符。
 - **0** 和 **false** 出现在表单内，常作为 `<input type="number" />` 和 `<input type="checkbox" />` 的结果值。应当作有效值，可以通过 **required** 校验。
 - 包含一个或多个空白字符的字符串，不包含任何可见字符，可能是用户无意中输入，但发现不到，这应当被 **required** 校验阻止。
+
+
+
+### Subset
+
+**Validator(data, rule)** ，如果 **data** 对象没有 **rule** 中指定的属性，则不会提示，直接跳过。这样方便用一份 **rule** ，校验 **data** 的不同子集。是否有该属性用的是 **Object.prototype.hasOwnProperty()** 方法判断的。
+
+```javascript
+// 定义全部校验规则
+const RULE = [
+    {
+        prop: 'phone',
+        assert: 'required',
+        msg: '手机号码不能为空'
+    },
+    {
+        prop: 'code',
+        assert: 'required',
+        msg: '验证码不能为空'
+    }
+]
+
+let form = {
+    phone: '13688888888',
+    code: ''
+}
+
+// 发送验证码仅需要校验 phone 字段即可
+function sendVerifyCode() {
+    let { phone } = form
+    // 校验部分字段
+    let msg = Validator({ phone }, RULE)
+    console.log(msg) // undefined
+}
+
+// 提交则需要校验 phone 字段和 code 字段
+function submit() {
+    let msg = Validator(form, RULE)
+    console.log(msg) // 验证码不能为空
+}
+```
+
+
+

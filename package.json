@@ -1,6 +1,6 @@
 {
     "name": "base-validator",
-    "version": "0.0.4",
+    "version": "1.0.0",
     "description": "基础的表单验证器",
     "main": "index.js",
     "scripts": {

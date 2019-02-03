@@ -427,3 +427,30 @@ describe('测试 in()', function () {
         assert(Validator({ keyname: [" abb"] }, rule) === MESSAGE, '非法范围应被阻止')
     })
 })
+
+describe('测试 Validator.all()', function () {
+    let rule = [
+        {
+            prop: 'a',
+            assert: 'required',
+            msg: MESSAGE
+        },
+        {
+            prop: 'b',
+            assert: 'required',
+            msg: MESSAGE
+        },
+        {
+            prop: 'c',
+            assert: 'required',
+            msg: MESSAGE
+        },
+    ]
+
+    it('测试 Validator.all()', function () {
+        let ret = Validator.all({ a: '      ', b: 0, c: undefined }, rule)
+        assert(Object.keys(ret).length === 2, 'all() 方法应返回不通过的项目')
+        assert(ret.a === MESSAGE, 'all() 方法应返回不通过的项目')
+        assert(ret.c === MESSAGE, 'all() 方法应返回不通过的项目')
+    })
+})
